@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <article class="parent">
+      <ol>
+        <li><button class="btn-first" type="button">버튼1</button></li>
+        <li><button type="button">버튼2</button></li>
+        <li><button type="button">버튼3</button></li>
+      </ol>
+    </article>
+    <script>
+      // const parentAdd = document.querySelector('.parent');
+
+      // parentAdd.addEventListener('click', (e) => {
+      //   console.log(this);
+      //   console.log(e.target); // 누른 해당 버튼 // <button type="button">버튼2</button>
+      //   console.log(e.currentTarget); //누른 요소의 부모 // <article class="parent">…</article>
+      // });
+
+      const btnFirst = document.querySelector('.btn-first');
+
+      const myObj = {
+        nameObj: 'testObj',
+        test() {
+          btnFirst.addEventListener('click', function () {
+            console.log(this);
+          });
+        },
+      };
+
+      myObj.test();
+    </script>
+  </body>
+</html>

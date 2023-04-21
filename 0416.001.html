@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <p id="myTxt">change text color!</p>
+    <img
+      src="https://cdn.pixabay.com/photo/2018/06/29/23/51/fabric-3506846_960_720.jpg"
+    />
+    <script>
+      const target = document.querySelector('p');
+      const myImg = document.querySelector('img');
+      const targetAtt = target.getAttribute('id');
+      const textCol = target.style.color;
+
+      console.log(targetAtt);
+      target.style.color = 'red';
+      target.style.fontWeight = 'bold';
+      myImg.setAttribute(
+        'src',
+        'https://cdn.pixabay.com/photo/2019/04/26/17/47/color-4158152_960_720.jpg'
+      );
+    </script>
+  </body>
+</html>

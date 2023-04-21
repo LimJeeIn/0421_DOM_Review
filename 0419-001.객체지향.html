@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      //   const me = {
+      //     name: '웨이드',
+      //     address: '제주도 제주시 인다 1길',
+      //     phoneNum: '010-8001-6536',
+      //     canWalk: function () {
+      //       console.log('웨이드가 걷는다.');
+      //     },
+      //     teaching: function (myStudent) {
+      //       myStudent.levelUp();
+      //     },
+      //   };
+
+      //   const student = {
+      //     level: 1,
+      //     levelUp: function () {
+      //       this.level++;
+      //     },
+      //   };
+
+      // console.log(me.teaching(student));
+
+      // 나에 대한 추상화
+      const me = {
+        name: 'jeein',
+        age: '10',
+        height: '200',
+        toDoList: function () {
+          console.log('Do It!');
+        },
+        checkList: function (study) {
+          study.levelUp();
+        },
+      };
+
+      const up = {
+        level: 1,
+        levelUp: function () {
+          this.level++;
+        },
+      };
+
+      console.log(me.checkList(up));
+      console.log(up);
+
+      // 참고 코드
+
+      // const Hoonie = {
+      //     name: '후니',
+      //     address: '경기도 고양시 일산동구 강송로 196',
+      //     phoneNum: '010-7631-5728',
+      //     encounter: function () {
+      //         console.log('앗! 야생의 후니(이)가 나타났다!');
+      //     },
+      //     canRap: function () {
+      //         console.log('후니(이)가 랩을 한다!');
+      //     },
+      //     coding: function (myMacBook) {
+      //         myMacBook.writeCode();
+      //     },
+      // };
+
+      // const myMacBook = {
+      //     cpu: 'M1 PRO',
+      //     writeCodee: function () {
+      //         console.log('후니(은)는 코딩을 시작했다...');
+      //     },
+      // };
+
+      // const me = {
+      //     name: '박재영',
+      //     age: '이십칠',
+      //     phoneNum: '01000000000',
+      //     address: '중랑구',
+      //     lang: ['python', 'C', 'R', 'JS', 'HTML/CSS'],
+      //     major: 'statistics',
+      //     초등학교: '묵동초등학교',
+      //     중학교: '태릉중학교',
+      //     family: ['엄마', '아빠', '엄마아들', '나']
+      // }
+
+      // const nor = {
+      //     name: '노르',
+      //     isLikeLionStudent: true,
+      //     project: 1,
+      //     rank: "bronze",
+
+      //     studying: function () {
+      //         this.project++;
+      //         this.rank = this.project >= 10 ? "grand-master" : "bronze";
+      //         console.log(`현재 진행한 프로젝트: ${this.project} 현재 랭크: ${this.rank}`);
+      //     }
+      // }
+
+      //   let myArr = new Array(1, 2, 3);
+      //   let myArr2 = new Array(4, 5, 6);
+
+      //   myArr2.length;
+      //   myArr.length;
+
+      //   myArr.forEach((item) => {
+      //     console.log(item);
+      //   });
+
+      //   myArr.forEach((item) => {
+      //     console.log(item);
+      //   });
+
+      //   function Factory() {}
+      //   let result1 = Factory(); //undefined
+      //   let result2 = new Factory(); //Factory {}
+
+      //   function NewFactory(name) {
+      //     this.name = name;
+      //     this.sayYourName = function () {
+      //       console.log(`제 이름은 ${this.name}입니다.`);
+      //     };
+      //   }
+
+      //   function NewFactory(name) {
+      //     this.name = name;
+      //     this.sayYourName = function () {
+      //       console.log(`나의 이름은 ${this.name}입니다 만나서 반가워요😉`);
+      //     };
+      //   }
+
+      //   const sayHi = new NewFactory('지인');
+      //   console.log(sayHi.name); // 지인
+      //   console.log(sayHi.sayYourName()); // 나의 이름은 지인입니다 만나서 반가워요😉
+
+      //   const sayHi2 = new NewFactory('김코드');
+      //   console.log(sayHi2.name); // 김코드
+
+      // 음식 메뉴를 랜덤으로 뽑아내는 기능을 가진 객체의 생성자를 만들어 콘솔로 출력해보자
+      //   function RandomFood(fooditems) {
+      //     this.name = fooditems;
+      //   }
+
+      //   RandomFood.
+
+      function Test() {}
+      const obj = new Test();
+      obj.__proto === Test.prototype;
+
+      function FoodPicker(foodNames) {
+        this.name = foodNames; // this가 인스턴스를 가르키게 되어 name 이라는 프로퍼티를 가지게 된다
+        this.sayMenu = function () {
+          console.log(
+            `오늘의 메뉴는 ${
+              this.name[Math.floor(Math.random() * this.name.length)] // 배열의 갯수를 곱함
+            } 입니다`
+          ); // this.name은 foodNames이기 때문에 []로 접근한다.
+        };
+      }
+
+      const robot1 = new FoodPicker(['짜장면', '청국장', '김치찌개']); // 인스턴스가 새로 생길때마다 새로운 함수가 생겨난다
+      const robot2 = new FoodPicker(['짜장면', '청국장', '김치찌개']);
+
+      //robot1 == robot2 -> false
+    </script>
+  </body>
+</html>
